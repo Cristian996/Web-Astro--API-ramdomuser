@@ -11,48 +11,21 @@
         const respuesta = await fetch(url);
         const { results } = await respuesta.json();
         const datos = results[0];
-
         
-        if (foto) {
-            foto.src = datos.picture.medium;
-        } else {
-            console.error('No se encontró el elemento #foto');
-        }
-        
-        if (nombre) {
-            nombre.textContent = datos.name.first;
-        } else {
-            console.error('Error al obtener nombre del usuario');
-        }
-
-        if (correo) {
-            correo.textContent = datos.email;
-        } else {
-            console.error('Error al obtener correo del usuario');
-        }
-
-        if (telefono) {
-            telefono.textContent = datos.phone;
-        } else {
-            console.error('Error al obtener telefono del usuario');
-        }
-        
+        foto.src = datos.picture.medium;
+        nombre.textContent = datos.name.first;        
+        correo.textContent = datos.email;        
+        telefono.textContent = datos.phone;        
         
     };
 
-    //crear un evento
+    //crear un evento al actualizar la pagina
     document.addEventListener("DOMContentLoaded", generarUsuario);
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        // Obtener el elemento button con querySelector
-        const boton = document.querySelector('#boton');
-        // Agregar el evento click al botón
-        if (boton) {
-            boton.addEventListener("click", generarUsuario);
-        } else {
-            console.error('No se encontró el elemento #boton');
-        }
-});
+
+    //Evento para el boton siguiente
+    const boton = document.querySelector('#boton');
+    boton.addEventListener("click", generarUsuario);
+
 </script>
 
 <h1>Generador de Usuarios Random</h1>
