@@ -1,27 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import User from '../components/User.astro'
-import Header from '../components/Header.astro';
+
 ---
 
 <Layout title="Primer Sitio WEB con Astro JS.">
 	<main>
-		<template>
-			<h1>Random User Generator</h1>
-		
-			<div class="contenedor">
-				<img id="foto" src="" alt="imagen" />
-				<h2>Hola mi nombre: <span id="nombre"></span></h2>
-				<div class="datos">
-					<p>Correo: <span id="correo"></span></p>
-					<p>Celular: <span id="telefono"></span></p>
-				</div>
-			</div>
-		
-			<div class="boton">
-				<button id="boton">SIGUIENTE</button>
-			</div>
-		</template>
+		<User/>
 	</main>
 </Layout>
 
